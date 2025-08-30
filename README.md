@@ -1,94 +1,112 @@
 # U.S. Baby Names Analysis - Trends & Insights
 
-A comprehensive analysis of U.S. baby names data to uncover naming trends, regional patterns, and unique characteristics across decades.
+A comprehensive data analysis project exploring U.S. baby naming patterns across decades, regions, and unique characteristics using Python and data science techniques.
 
-## 📊 Analysis Objectives
+## Overview
 
-### Objective 1: Track Changes in Name Popularity
-- Find the overall most popular girl and boy names and show how they have changed in popularity rankings over the years
-- Identify the names with the biggest jumps in popularity from the first year of the dataset to the last year
+This project analyzes a comprehensive dataset of U.S. baby names (2.2M+ records) to uncover naming trends, regional patterns, and demographic insights. The analysis covers data from multiple decades and all 50 states, providing insights into how naming preferences have evolved over time and vary across different regions of the country.
 
-### Objective 2: Compare Popularity Across Decades
-- For each year, return the 3 most popular girl names and 3 most popular boy names
-- For each decade, return the 3 most popular girl names and 3 most popular boy names
+**Dataset**: Historical U.S. baby names data including State, Gender, Year, Name, and Births (1980-2010s)
 
-### Objective 3: Compare Popularity Across Regions
-- Return the number of babies born in each of the six regions (NOTE: The state of MI should be in the Midwest region)
-- Return the 3 most popular girl names and 3 most popular boy names within each region
+## Features / What I Did
 
-### Objective 4: Explore Unique Names in the Dataset
-- Find the 10 most popular androgynous names (names given to both females and males)
-- Find the length of the shortest and longest names, and identify the most popular short names (those with the fewest characters) and long names (those with the most characters)
-- Find the state with the highest percent of babies named "Chris"
+### Data Analysis & Processing
+- **Comprehensive Data Cleaning**: Handled CSV files without headers, created proper column mappings
+- **Regional Classification System**: Built custom U.S. state-to-region mapping ensuring accurate geographic categorization
+- **Time-Series Analysis**: Analyzed naming trends across decades and individual years
+- **Statistical Ranking**: Implemented ranking algorithms to identify top names by various criteria
 
-## 🚀 Getting Started
+### Key Analytical Insights
+- **Popularity Tracking**: Identified overall most popular names (Jessica for girls, Michael for boys) and their yearly trends
+- **Trend Analysis**: Discovered names with biggest popularity jumps (Isabella: +22,266 births from first to last year)
+- **Decade Comparisons**: Analyzed top 3 names by gender for each decade (1980s, 1990s, 2000s)
+- **Regional Patterns**: Mapped birth distributions and top names across 6 U.S. regions
+- **Unique Name Characteristics**: Identified most popular androgynous names and analyzed name length distributions
+
+### Final Project Question
+**Solved**: "Which state had the smallest percentage of babies named 'Chris'?"
+**Answer**: West Virginia (WV) with 0.0018% - determined through comprehensive percentage calculations across all states
+
+## Tech Stack
+
+- **Python 3.7+** - Core programming language
+- **Pandas** - Data manipulation, grouping, and statistical analysis
+- **NumPy** - Numerical operations and array handling
+- **Data Analysis Techniques**:
+  - GroupBy operations and aggregations
+  - Window functions and ranking algorithms
+  - Pivot tables and data reshaping
+  - Statistical calculations and percentage analysis
+
+## What I Learned
+
+This project significantly enhanced my **data science and Python programming skills**. I gained hands-on experience with large-scale data processing (2.2M+ records), learned advanced Pandas operations including complex GroupBy operations and pivot tables, and developed strong analytical thinking for uncovering patterns in demographic data. The project taught me how to handle real-world data challenges like missing headers, create efficient data processing pipelines, and present complex findings in clear, actionable insights.
+
+## How It Works
+
+### Data Flow
+1. **Input**: Loads CSV file with baby names data (State, Gender, Year, Name, Births)
+2. **Processing**: 
+   - Creates regional mapping for geographic analysis
+   - Performs statistical aggregations by various dimensions
+   - Implements ranking algorithms for popularity analysis
+   - Calculates percentage distributions and trend changes
+3. **Output**: Comprehensive analysis results displayed in console including:
+   - Overall popularity rankings
+   - Decade-by-decade comparisons
+   - Regional birth distributions
+   - Unique name characteristics
+   - Final Chris analysis with state rankings
+
+### Analysis Pipeline
+- **Objective 1**: Popularity tracking and trend analysis
+- **Objective 2**: Yearly and decade-based comparisons
+- **Objective 3**: Regional pattern analysis
+- **Objective 4**: Unique name exploration and Chris percentage analysis
+
+## Getting Started
 
 ### Prerequisites
-- Python 3.7+
-- pandas, matplotlib, seaborn, numpy
+- Python 3.7 or higher
+- Git
 
-### Setup Instructions
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/noahkhomer18/U.S.-Baby-Names---Trends-Insights.git
-   cd U.S.-Baby-Names---Trends-Insights
-   ```
+### Installation & Setup
+```bash
+# Clone the repository
+git clone https://github.com/noahkhomer18/U.S.-Baby-Names---Trends-Insights.git
+cd U.S.-Baby-Names---Trends-Insights
 
-2. **Install Python dependencies**
-   ```bash
-   pip install -r requirements_direct.txt
-   ```
+# Install required packages
+pip install pandas numpy
 
-3. **Run the analysis**
-   ```bash
-   python baby_names_analysis_simple.py
-   ```
+# Run the analysis
+python baby_names_analysis_simple.py
+```
 
-## 📁 Contents
-
-- `names_data.csv` - Main dataset with U.S. baby names (State, Gender, Year, Name, Births)
-- `baby_names_analysis_simple.py` - Complete analysis script that processes CSV directly
-- `requirements_direct.txt` - Python dependencies
-- `README.md` - This file
-- `.gitignore` - Git ignore rules
-
-## 🔍 Key Features
-
-- **Direct CSV Processing** - No database setup required
-- **Comprehensive Analysis** - Covers all 4 objectives completely
-- **Regional Mapping** - Built-in U.S. state to region mapping
-- **Immediate Results** - All analysis displayed in console
-- **Clean Output** - Well-formatted results for easy reading
-
-## 📈 Analysis Results
-
-The script provides detailed analysis including:
+### Expected Output
+The script will display comprehensive analysis results including:
 - Overall most popular names by gender
-- Names with biggest popularity jumps over time
-- Top names by year and decade
-- Regional birth distributions and top names
+- Names with biggest popularity changes
+- Top names by decade and region
 - Most popular androgynous names
-- Name length analysis
-- Chris popularity by state (answering the final project question)
-
-## 🎯 Final Answer
-
-**The state with the smallest percentage of babies named 'Chris' is West Virginia (WV) with 0.0018%**
-
-## 💻 Technical Implementation
-
-- **Data Processing**: Pandas for efficient CSV handling and data manipulation
-- **Analysis**: GroupBy operations, ranking, and statistical calculations
-- **Regional Logic**: Hardcoded state-to-region mapping ensuring MI is in Midwest
-- **Performance**: Optimized for large datasets (2.2M+ records)
-
-## 📊 Sample Output
-
-The analysis provides comprehensive results including:
-- Popularity trends over time
-- Decade-by-decade comparisons
-- Regional breakdowns
-- Unique name characteristics
 - Complete Chris analysis by state
 
-Run the script to see all detailed results!
+## Project Structure
+
+```
+├── names_data.csv                    # Main dataset (2.2M+ records)
+├── baby_names_analysis_simple.py    # Complete analysis script
+├── requirements_direct.txt           # Python dependencies
+├── popularity_jumps.png             # Visualization of popularity changes
+├── popularity_trends.png            # Visualization of trends over time
+└── README.md                        # This file
+```
+
+## Key Results
+
+- **Most Popular Names**: Jessica (F: 863K births), Michael (M: 1.38M births)
+- **Biggest Trend**: Isabella's popularity increased by 22,266 births
+- **Regional Leader**: South region with 34.2M total births
+- **Final Answer**: WV has smallest Chris percentage at 0.0018%
+
+This project demonstrates strong data analysis skills, Python programming proficiency, and the ability to extract meaningful insights from large, complex datasets.
