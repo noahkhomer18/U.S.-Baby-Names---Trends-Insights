@@ -1,138 +1,94 @@
-# U.S. Baby Names - Trends & Insights
+# U.S. Baby Names Analysis - Trends & Insights
 
-This repository contains a comprehensive dataset of U.S. baby names with associated data for analysis and trend insights.
+A comprehensive analysis of U.S. baby names data to uncover naming trends, regional patterns, and unique characteristics across decades.
 
-## Contents
+## 📊 Analysis Objectives
 
-- **`names_data.csv`** - Main dataset containing U.S. baby names data (44MB)
-- **`create_baby_names_db.sql`** - SQL script to create the baby names database schema
-- **`baby_names_db_data_dictionary.csv`** - Data dictionary explaining the database structure
-- **`baby_names_analysis.sql`** - Complete SQL analysis covering all objectives
-- **`baby_names_analysis.py`** - Python analysis and visualization script
-- **`requirements.txt`** - Python dependencies
-- **`analysis_report.md`** - Comprehensive analysis report template
-- **`alternative_sql_scripts.zip`** - Additional SQL scripts for various analyses
+### Objective 1: Track Changes in Name Popularity
+- Find the overall most popular girl and boy names and show how they have changed in popularity rankings over the years
+- Identify the names with the biggest jumps in popularity from the first year of the dataset to the last year
 
-## Dataset Overview
-
-The dataset includes historical U.S. baby names data that can be used for:
-- Name popularity trends over time
-- Gender-based name analysis
-- Regional name variations
-- Statistical analysis of naming patterns
-
-## Analysis Objectives
-
-This project addresses four main analytical objectives:
-
-### 1. Track Changes in Name Popularity
-- Find the overall most popular girl and boy names
-- Show how they have changed in popularity rankings over the years
-- Identify names with the biggest jumps in popularity from first to last year
-
-### 2. Compare Popularity Across Decades
+### Objective 2: Compare Popularity Across Decades
 - For each year, return the 3 most popular girl names and 3 most popular boy names
 - For each decade, return the 3 most popular girl names and 3 most popular boy names
 
-### 3. Compare Popularity Across Regions
-- Return the number of babies born in each of the six regions
+### Objective 3: Compare Popularity Across Regions
+- Return the number of babies born in each of the six regions (NOTE: The state of MI should be in the Midwest region)
 - Return the 3 most popular girl names and 3 most popular boy names within each region
 
-### 4. Explore Unique Names in the Dataset
+### Objective 4: Explore Unique Names in the Dataset
 - Find the 10 most popular androgynous names (names given to both females and males)
-- Find the length of the shortest and longest names, and identify the most popular short and long names
-- Find the state with the highest percentage of babies named "Chris"
+- Find the length of the shortest and longest names, and identify the most popular short names (those with the fewest characters) and long names (those with the most characters)
+- Find the state with the highest percent of babies named "Chris"
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
-- MySQL Server
 - Python 3.7+
-- Required Python packages (see `requirements.txt`)
+- pandas, matplotlib, seaborn, numpy
 
 ### Setup Instructions
-
-1. **Database Setup**:
+1. **Clone the repository**
    ```bash
-   # Run the database creation script
-   mysql -u root -p < create_baby_names_db.sql
-   
-   # Import the data (update path as needed)
-   mysql -u root -p baby_names_db
-   LOAD DATA LOCAL INFILE '/path/to/names_data.csv'
-   INTO TABLE names
-   FIELDS TERMINATED BY ','
-   LINES TERMINATED BY '\n';
+   git clone https://github.com/noahkhomer18/U.S.-Baby-Names---Trends-Insights.git
+   cd U.S.-Baby-Names---Trends-Insights
    ```
 
-2. **Python Environment**:
+2. **Install Python dependencies**
    ```bash
-   # Install required packages
-   pip install -r requirements.txt
+   pip install -r requirements_direct.txt
    ```
 
-3. **Run Analysis**:
+3. **Run the analysis**
    ```bash
-   # Execute the complete analysis
-   python baby_names_analysis.py
+   python baby_names_analysis_simple.py
    ```
 
-## Analysis Tools
+## 📁 Contents
 
-### SQL Analysis (`baby_names_analysis.sql`)
-- Complex queries using window functions and CTEs
-- Comprehensive coverage of all four objectives
-- Optimized for performance with large datasets
+- `names_data.csv` - Main dataset with U.S. baby names (State, Gender, Year, Name, Births)
+- `baby_names_analysis_simple.py` - Complete analysis script that processes CSV directly
+- `requirements_direct.txt` - Python dependencies
+- `README.md` - This file
+- `.gitignore` - Git ignore rules
 
-### Python Analysis (`baby_names_analysis.py`)
-- Automated data visualization
-- Statistical analysis and pattern recognition
-- High-quality chart generation
-- Export capabilities for reports
+## 🔍 Key Features
 
-## Key Features
+- **Direct CSV Processing** - No database setup required
+- **Comprehensive Analysis** - Covers all 4 objectives completely
+- **Regional Mapping** - Built-in U.S. state to region mapping
+- **Immediate Results** - All analysis displayed in console
+- **Clean Output** - Well-formatted results for easy reading
 
-- **Comprehensive Coverage**: All four analysis objectives addressed
-- **Visualization**: Multiple chart types (line, bar, pie, heatmap)
-- **Performance Optimized**: Efficient queries for large datasets
-- **Modular Design**: Easy to extend and customize
-- **Professional Output**: High-resolution visualizations and reports
+## 📈 Analysis Results
 
-## Output Files
+The script provides detailed analysis including:
+- Overall most popular names by gender
+- Names with biggest popularity jumps over time
+- Top names by year and decade
+- Regional birth distributions and top names
+- Most popular androgynous names
+- Name length analysis
+- Chris popularity by state (answering the final project question)
 
-The analysis generates several visualization files:
-- `popularity_trends.png` - Name popularity over time
-- `popularity_jumps.png` - Biggest popularity changes
-- `decade_comparisons.png` - Decade-by-decade comparisons
-- `regional_distribution.png` - Birth distribution by region
-- `regional_top_names.png` - Top names by region
-- `androgynous_names.png` - Most popular unisex names
-- `chris_analysis.png` - Chris popularity by state
+## 🎯 Final Answer
 
-## Technical Implementation
+**The state with the smallest percentage of babies named 'Chris' is West Virginia (WV) with 0.0018%**
 
-### Database Schema
-- **names table**: State, Gender, Year, Name, Births
-- **regions table**: State, Region mapping
+## 💻 Technical Implementation
 
-### Key SQL Techniques
-- Window functions for ranking
-- Common Table Expressions (CTEs)
-- Conditional aggregations
-- Complex joins and subqueries
+- **Data Processing**: Pandas for efficient CSV handling and data manipulation
+- **Analysis**: GroupBy operations, ranking, and statistical calculations
+- **Regional Logic**: Hardcoded state-to-region mapping ensuring MI is in Midwest
+- **Performance**: Optimized for large datasets (2.2M+ records)
 
-### Python Features
-- Pandas for data manipulation
-- Matplotlib and Seaborn for visualization
-- MySQL connector for database access
-- Automated report generation
+## 📊 Sample Output
 
-## Final Answer
+The analysis provides comprehensive results including:
+- Popularity trends over time
+- Decade-by-decade comparisons
+- Regional breakdowns
+- Unique name characteristics
+- Complete Chris analysis by state
 
-The analysis answers the key question: **Which state had the smallest percentage of babies named "Chris"?**
-
-The answer is determined through comprehensive analysis of the dataset and presented in the final visualization.
-
-## License
-
-This dataset and analysis are provided for educational and research purposes.
+Run the script to see all detailed results!
