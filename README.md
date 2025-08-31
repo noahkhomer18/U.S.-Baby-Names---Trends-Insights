@@ -4,7 +4,7 @@ A modern, interactive web application that provides comprehensive analysis of U.
 
 ## 🚀 Live Demo
 
-[View Live Application](https://your-netlify-url.netlify.app)
+[View Live Application](https://usbabynamesbynoah.netlify.app/)
 
 ## ✨ Features
 
