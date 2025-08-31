@@ -19,3 +19,20 @@ Desktop.ini
 
 # Log files
 *.log
+
+# Large files (not needed for web deployment)
+*.zip
+*.png
+*.jpg
+*.jpeg
+
+# Development files
+*.ts
+*.py
+__pycache__/
+*.pyc
+
+# Node modules (if any)
+node_modules/
+package-lock.json
+yarn.lock

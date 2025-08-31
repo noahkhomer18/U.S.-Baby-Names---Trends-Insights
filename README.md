@@ -1,112 +1,163 @@
-# U.S. Baby Names Analysis - Trends & Insights
+# U.S. Baby Names Analysis Dashboard
 
-A comprehensive data analysis project exploring U.S. baby naming patterns across decades, regions, and unique characteristics using Python and data science techniques.
+A modern, interactive web application that provides comprehensive analysis of U.S. baby naming trends across 30 years and 50 states. Built with vanilla JavaScript, HTML5, and CSS3, featuring a responsive design and real-time search functionality.
 
-## Overview
+## 🚀 Live Demo
 
-This project analyzes a comprehensive dataset of U.S. baby names (2.2M+ records) to uncover naming trends, regional patterns, and demographic insights. The analysis covers data from multiple decades and all 50 states, providing insights into how naming preferences have evolved over time and vary across different regions of the country.
+[View Live Application](https://your-netlify-url.netlify.app)
 
-**Dataset**: Historical U.S. baby names data including State, Gender, Year, Name, and Births (1980-2010s)
+## ✨ Features
 
-## Features / What I Did
+### Interactive Name Search
+- **Real-time Search**: Search any name from a database of 22,000+ unique names
+- **Modern UI**: Shadcn-inspired design with smooth animations and hover effects
+- **Comprehensive Results**: Display total births, popularity rank, peak year, top state, and gender distribution
+- **Smart Suggestions**: Helpful name suggestions when searches return no results
 
-### Data Analysis & Processing
-- **Comprehensive Data Cleaning**: Handled CSV files without headers, created proper column mappings
-- **Regional Classification System**: Built custom U.S. state-to-region mapping ensuring accurate geographic categorization
-- **Time-Series Analysis**: Analyzed naming trends across decades and individual years
-- **Statistical Ranking**: Implemented ranking algorithms to identify top names by various criteria
+### Data Visualization
+- **Overview Dashboard**: Key statistics including 2.2M+ records, 30 years of data, and 50 states
+- **Popularity Analysis**: Most popular names by gender with detailed statistics
+- **Trend Analysis**: Names with biggest increases and decreases in popularity
+- **Regional Patterns**: Birth distribution across U.S. regions
+- **Unique Insights**: Androgynous names analysis and demographic patterns
 
-### Key Analytical Insights
-- **Popularity Tracking**: Identified overall most popular names (Jessica for girls, Michael for boys) and their yearly trends
-- **Trend Analysis**: Discovered names with biggest popularity jumps (Isabella: +22,266 births from first to last year)
-- **Decade Comparisons**: Analyzed top 3 names by gender for each decade (1980s, 1990s, 2000s)
-- **Regional Patterns**: Mapped birth distributions and top names across 6 U.S. regions
-- **Unique Name Characteristics**: Identified most popular androgynous names and analyzed name length distributions
+### Technical Features
+- **Responsive Design**: Mobile-first approach with adaptive layouts
+- **Performance Optimized**: Efficient data loading and rendering
+- **Modern CSS**: Custom properties, flexbox, and grid layouts
+- **Accessibility**: Semantic HTML and keyboard navigation support
 
-### Final Project Question
-**Solved**: "Which state had the smallest percentage of babies named 'Chris'?"
-**Answer**: West Virginia (WV) with 0.0018% - determined through comprehensive percentage calculations across all states
+## 🛠️ Tech Stack
 
-## Tech Stack
+- **Frontend**: Vanilla JavaScript (ES6+), HTML5, CSS3
+- **Styling**: Custom CSS with CSS Grid, Flexbox, and CSS Custom Properties
+- **Icons**: Font Awesome 6.4.0
+- **Fonts**: Inter font family (Google Fonts)
+- **Data**: JSON-based dataset with 22,000+ names and 2.2M+ records
+- **Deployment**: Netlify-ready static site
 
-- **Python 3.7+** - Core programming language
-- **Pandas** - Data manipulation, grouping, and statistical analysis
-- **NumPy** - Numerical operations and array handling
-- **Data Analysis Techniques**:
-  - GroupBy operations and aggregations
-  - Window functions and ranking algorithms
-  - Pivot tables and data reshaping
-  - Statistical calculations and percentage analysis
+## 📊 Dataset Overview
 
-## What I Learned
+- **Total Records**: 2.2M+ baby name records
+- **Time Span**: 30 years of historical data
+- **Geographic Coverage**: All 50 U.S. states
+- **Unique Names**: 22,000+ distinct names
+- **Data Points**: State, gender, year, name, and birth count
 
-This project significantly enhanced my **data science and Python programming skills**. I gained hands-on experience with large-scale data processing (2.2M+ records), learned advanced Pandas operations including complex GroupBy operations and pivot tables, and developed strong analytical thinking for uncovering patterns in demographic data. The project taught me how to handle real-world data challenges like missing headers, create efficient data processing pipelines, and present complex findings in clear, actionable insights.
+## 🎯 Key Insights
 
-## How It Works
+### Most Popular Names
+- **Girls**: Jessica (863K births)
+- **Boys**: Michael (1.38M births)
 
-### Data Flow
-1. **Input**: Loads CSV file with baby names data (State, Gender, Year, Name, Births)
-2. **Processing**: 
-   - Creates regional mapping for geographic analysis
-   - Performs statistical aggregations by various dimensions
-   - Implements ranking algorithms for popularity analysis
-   - Calculates percentage distributions and trend changes
-3. **Output**: Comprehensive analysis results displayed in console including:
-   - Overall popularity rankings
-   - Decade-by-decade comparisons
-   - Regional birth distributions
-   - Unique name characteristics
-   - Final Chris analysis with state rankings
+### Notable Trends
+- **Biggest Increase**: Isabella (+22,266 births)
+- **Regional Leader**: South region (34.2M births)
+- **Unique Analysis**: West Virginia has the smallest percentage of babies named "Chris" (0.0018%)
 
-### Analysis Pipeline
-- **Objective 1**: Popularity tracking and trend analysis
-- **Objective 2**: Yearly and decade-based comparisons
-- **Objective 3**: Regional pattern analysis
-- **Objective 4**: Unique name exploration and Chris percentage analysis
-
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.7 or higher
-- Git
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- No server setup required - runs entirely in the browser
 
-### Installation & Setup
+### Local Development
 ```bash
 # Clone the repository
 git clone https://github.com/noahkhomer18/U.S.-Baby-Names---Trends-Insights.git
 cd U.S.-Baby-Names---Trends-Insights
 
-# Install required packages
-pip install pandas numpy
+# Start local server (Python 3)
+python -m http.server 8000
 
-# Run the analysis
-python baby_names_analysis_simple.py
+# Or using Node.js
+npx serve .
+
+# Open in browser
+open http://localhost:8000
 ```
 
-### Expected Output
-The script will display comprehensive analysis results including:
-- Overall most popular names by gender
-- Names with biggest popularity changes
-- Top names by decade and region
-- Most popular androgynous names
-- Complete Chris analysis by state
+### Deployment
+This project is designed for easy deployment on static hosting platforms:
 
-## Project Structure
+**Netlify:**
+1. Connect your GitHub repository
+2. Set build command: (leave empty for static site)
+3. Set publish directory: `.`
+4. Deploy!
+
+**GitHub Pages:**
+1. Enable GitHub Pages in repository settings
+2. Select source branch (main/master)
+3. Site will be available at `https://username.github.io/repository-name`
+
+## 📁 Project Structure
 
 ```
-├── names_data.csv                    # Main dataset (2.2M+ records)
-├── baby_names_analysis_simple.py    # Complete analysis script
-├── requirements_direct.txt           # Python dependencies
-├── popularity_jumps.png             # Visualization of popularity changes
-├── popularity_trends.png            # Visualization of trends over time
-└── README.md                        # This file
+├── index.html              # Main HTML file (web application)
+├── styles.css              # Complete styling with modern design
+├── app.js                  # Core JavaScript functionality
+├── names_data.json         # Optimized dataset for web consumption
+├── names_data.csv          # Original dataset (2.2M+ records)
+├── baby_names_analysis_simple.py    # Python analysis script
+├── requirements_direct.txt # Python dependencies
+├── .gitignore              # Git ignore rules
+└── README.md              # This file
 ```
 
-## Key Results
+## 🎨 Design Philosophy
 
-- **Most Popular Names**: Jessica (F: 863K births), Michael (M: 1.38M births)
-- **Biggest Trend**: Isabella's popularity increased by 22,266 births
-- **Regional Leader**: South region with 34.2M total births
-- **Final Answer**: WV has smallest Chris percentage at 0.0018%
+This project demonstrates modern web development best practices:
 
-This project demonstrates strong data analysis skills, Python programming proficiency, and the ability to extract meaningful insights from large, complex datasets.
+- **Progressive Enhancement**: Works without JavaScript for basic functionality
+- **Mobile-First**: Responsive design that works on all devices
+- **Performance**: Optimized data loading and efficient rendering
+- **Accessibility**: Semantic HTML and keyboard navigation
+- **Modern CSS**: Using latest CSS features like Grid and Custom Properties
+
+## 🔧 Customization
+
+### Adding New Names
+1. Update `names_data.json` with new name data
+2. Follow the existing data structure:
+```json
+{
+  "name": "Example",
+  "total_births": 1000,
+  "girls_births": 500,
+  "boys_births": 500,
+  "most_popular_year": 1995,
+  "most_popular_state": "CA",
+  "popularity_rank": 150,
+  "gender_distribution": "50% Girls, 50% Boys"
+}
+```
+
+### Styling Changes
+- Modify `styles.css` using CSS custom properties for consistent theming
+- All colors and spacing are defined in the `:root` selector
+- Responsive breakpoints are clearly defined
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👨‍💻 About the Developer
+
+**Noah Khomer** - Full Stack Developer passionate about data visualization and modern web technologies.
+
+- 🌐 [Portfolio](https://noah-khomer.com)
+- 💼 [LinkedIn](https://www.linkedin.com/in/noah-khomer-19a935342)
+- 🐙 [GitHub](https://github.com/noahkhomer18)
+
+---
+
+*This project showcases advanced JavaScript skills, modern CSS techniques, and the ability to create engaging data visualizations for complex datasets.*

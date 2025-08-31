@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U.S. Baby Names Analysis - Modern Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-chart-line"></i>
+                <span>Baby Names Analytics</span>
+            </div>
+            <div class="nav-links">
+                <a href="#overview" class="nav-link active">Overview</a>
+                <a href="#search" class="nav-link">Search</a>
+                <a href="#analysis" class="nav-link">Analysis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">U.S. Baby Names Analysis</h1>
+                <p class="hero-subtitle">Comprehensive analysis of baby naming trends across 30 years and 50 states</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2.2M+</span>
+                        <span class="stat-label">Records</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">22K+</span>
+                        <span class="stat-label">Names</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">30</span>
+                        <span class="stat-label">Years</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section id="search" class="search-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Search Your Name</h2>
+                <p>Discover statistics and trends for any name in our database</p>
+            </div>
+            <div class="search-card">
+                <div class="search-input-group">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="nameSearch" class="search-input" placeholder="Enter a name to search..." />
+                    <button onclick="searchName()" class="search-button">
+                        <i class="fas fa-arrow-right"></i>
+                        Search
+                    </button>
+                </div>
+                <div id="searchResults" class="search-results">
+                    <!-- Search results will be populated by TypeScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="overview-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dataset Overview</h2>
+                <p>Key insights from our comprehensive baby names analysis</p>
+            </div>
+            <div class="overview-grid" id="summaryGrid">
+                <!-- Summary cards will be populated by TypeScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Section -->
+    <section id="analysis" class="analysis-section">
+        <div class="container">
+            <!-- Most Popular Names -->
+            <div class="analysis-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-trophy"></i> Most Popular Names</h3>
+                    <p>Overall champions across all years</p>
+                </div>
+                <div class="card-content" id="topNames">
+                    <!-- Top names will be populated by TypeScript -->
+                </div>
+            </div>
+
+            <!-- Popularity Changes -->
+            <div class="analysis-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-chart-line"></i> Popularity Changes</h3>
+                    <p>Biggest increases and decreases in name popularity</p>
+                </div>
+                <div class="card-content">
+                    <div class="changes-grid">
+                        <div class="change-column">
+                            <h4><i class="fas fa-arrow-up text-success"></i> Biggest Increases</h4>
+                            <div class="table-container">
+                                <table class="data-table" id="biggestIncreases">
+                                    <!-- Data will be populated by TypeScript -->
+                                </table>
+                            </div>
+                        </div>
+                        <div class="change-column">
+                            <h4><i class="fas fa-arrow-down text-danger"></i> Biggest Decreases</h4>
+                            <div class="table-container">
+                                <table class="data-table" id="biggestDecreases">
+                                    <!-- Data will be populated by TypeScript -->
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regional Analysis -->
+            <div class="analysis-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-map"></i> Regional Patterns</h3>
+                    <p>Birth distribution across U.S. regions</p>
+                </div>
+                <div class="card-content">
+                    <div class="table-container">
+                        <table class="data-table" id="regionalData">
+                            <!-- Data will be populated by TypeScript -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Androgynous Names -->
+            <div class="analysis-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-venus-mars"></i> Androgynous Names</h3>
+                    <p>Names used for both boys and girls</p>
+                </div>
+                <div class="card-content">
+                    <div class="table-container">
+                        <table class="data-table" id="androgynousNames">
+                            <!-- Data will be populated by TypeScript -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Noah Analysis -->
+            <div class="analysis-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-target"></i> Noah Analysis</h3>
+                    <p>Final answer to our research question</p>
+                </div>
+                <div class="card-content">
+                    <div class="highlight-box" id="noahAnswer">
+                        <!-- Answer will be populated by TypeScript -->
+                    </div>
+                    <div class="table-container">
+                        <h4>Noah Percentage by State (Top 10)</h4>
+                        <table class="data-table" id="noahAnalysis">
+                            <!-- Data will be populated by TypeScript -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2025 This project was made by <strong>Noah Khomer</strong></p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://noah-khomer.com" target="_blank" class="footer-link">
+                        <i class="fas fa-globe"></i>
+                        Portfolio
+                    </a>
+                    <a href="https://github.com/noahkhomer18" target="_blank" class="footer-link">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/noah-khomer-19a935342" target="_blank" class="footer-link">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
